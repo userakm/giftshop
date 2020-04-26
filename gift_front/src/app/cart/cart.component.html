@@ -1,0 +1,52 @@
+<div class="cart">
+    <div class="cart-header">
+        <h2>Моя Корзинка</h2>
+    </div>
+   
+    <div class="close-container">
+      <img  (click)=' clearCart()' src="https://www.pngitem.com/pimgs/m/24-243143_chores-clear-button-icon-png-transparent-png.png" width="50" height="50">
+  </div>
+  <div class="cart-container">
+      <div class="cart-item" *ngFor="let item of items">
+          
+          <span>{{ item.name }}</span>
+          <img  src="{{item.Image[0]}}" width="300" height="240" alt="suret">
+          <span>{{ item.price }}$</span>
+      </div>
+  </div>
+    <div class="shipping-container">
+        <div [hidden]="submitted">
+          <h3>Напишите информацию о себе: </h3>
+          <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+            
+            
+      
+            <div class="form-group">
+              <label for="phone">Номер телефона: </label>
+              <input type="text" class="form-control" id="phone"
+                     [(ngModel)]="model.phone" name="phone">
+            </div>
+
+
+            <div class="form-group">
+              <label for="address">Адрес: </label>
+              <input type="text" class="form-control" id="address"
+                     [(ngModel)]="model.address" name="address">
+            </div>
+      
+      
+            <button type="submit"  [disabled]="!heroForm.form.valid" style="color: brown; 
+            padding: 10px; border-radius: 5px; margin-left: 15px; 
+            background-color: white;">Сохранить!</button>
+      
+            
+          </form>
+        </div>
+      
+        <div [hidden]="!submitted">
+          <h2>Ваша информация сохранена!</h2>      
+        </div>
+      </div>
+    <div class="bottom"><button class="buy-button" (click)="purchase()">Сделать заказ!</button></div>
+    
+</div>

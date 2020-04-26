@@ -1,0 +1,33 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: brown;
+   
+}
+.form-container{
+    padding:5%;
+    margin-left: 26%;
+    margin-right: 26%;
+}
+
+.form-group{
+    margin: 2%;
+}
+.btn-primary{
+    text-decoration: none;
+    color: brown;
+    background-color: white;
+    padding:10px;
+    border-radius: 2px;
+    margin-right: 2%;
+}
+.btn-link{
+    text-decoration: none;
+    color: brown;
+    padding:10px;
+    border-radius: 2px;
+    margin-right: 2%;
+    font-size: 14px;
+}
